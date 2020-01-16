@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    HW20
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'hw20_url' %}" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+
+            <div class="form-group">
+
+
+                {{ field.label }}
+                {{ field }}
+            </div>
+
+        {% endfor %}
+        <div class="alert-danger">
+            {% if form.errors %}
+                {{ form.errors }}
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+{% endblock %}
