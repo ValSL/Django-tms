@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Users
+{% endblock %}
+
+{% block content %}
+    <ul class="list-group">
+
+        {% for user in users %}
+            <li class="list-group-item col-3">ID: {{ user.id }} | Firstname: {{ user.firstname }} | Lastname: {{ user.lastname }}<a class="btn btn-primary ml-3" href="{% url 'user_detail_url' id=user.id %}" >Details</a></li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

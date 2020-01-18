@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User - {{ user.id }}
+{% endblock %}
+
+{% block content %}
+    <div class="ml-4">
+        <h1>User ID: {{ user.id }}</h1>
+        <p>Firstname: {{ user.firstname }}</p>
+        <p>Lastname: {{ user.lastname }}</p>
+        <p>Age: {{ user.age }}</p>
+        <p>Profession: {{ user.profession }}</p>
+        <a href="{% url 'user_edit_url' id=user.id %}" class="btn btn-warning">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+    </div>
+{% endblock %}
