@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'user_delete_url' id=user.id %}" method="post">
+        {% csrf_token %}
+        <h1>Are you sure?</h1>
+        <p><a href="{% url 'user_detail_url' id=user.id %}">Cancel</a></p>
+        <p>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </p>
+    </form>
+{% endblock %}

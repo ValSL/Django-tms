@@ -12,6 +12,6 @@
         <p>Age: {{ user.age }}</p>
         <p>Profession: {{ user.profession }}</p>
         <a href="{% url 'user_edit_url' id=user.id %}" class="btn btn-warning">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <a href="{% url 'user_delete_url' id=user.id %}" class="btn btn-danger">Delete</a>
     </div>
 {% endblock %}
