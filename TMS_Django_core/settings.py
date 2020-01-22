@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'hw20',
     'cw21',
+    'cw22',
 ]
 
 MIDDLEWARE = [
