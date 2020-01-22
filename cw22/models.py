@@ -25,4 +25,4 @@ class Diary(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=100)
     pages = models.IntegerField()
-    students = models.ManyToManyField('Student', null=True, related_name='books')
+    students = models.ManyToManyField('Student', related_name='books')

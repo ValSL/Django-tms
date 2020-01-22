@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'hw20',
     'cw21',
     'cw22',
+    'hw22',
 ]
 
 MIDDLEWARE = [
