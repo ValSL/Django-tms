@@ -12,10 +12,7 @@ all_group_albums = group1.album.all()
 all_album_tracks = album1.track.all()
 
 # Получение всех треков группы
-all_group_tracks = []
-for album in all_group_albums:
-    for track in album.track.all():
-        all_group_tracks.append(track)
+MusicBand.objects.aggregate(Count('album__track'))
 
 # Получение всех альбомов, группы которых были основаны в 1990 году
 Album.objects.filter(group__year_of_foundation=1990)
