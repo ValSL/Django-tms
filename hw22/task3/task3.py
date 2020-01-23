@@ -1,5 +1,5 @@
 from hw22.models import *
-
+from django.db.models import Count
 
 group1 = MusicBand.objects.create(name='group1', year_of_foundation=2000, genre='pop')
 album1 = Album.objects.create(title='album1', group=group1)
