@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hw20'
+    'hw20',
+    'cw24',
 ]
 
 MIDDLEWARE = [
@@ -115,3 +116,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'ValSLTest@yandex.by'
+EMAIL_HOST_PASSWORD = 'etereg14'
+EMAIL_USE_SSL = True

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    cw24 index
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'image_url' %}" method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" name="button" value="I love cats!">
+        </div>
+
+        <div>
+            <input class="btn btn-primary" type="submit" name="button" value="I love dogs!">
+        </div>
+    </form>
+{% endblock %}
