@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hw20',
     'cw24',
+    'hw24',
 ]
 
 MIDDLEWARE = [

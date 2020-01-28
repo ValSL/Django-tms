@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    form
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% url 'hw24_image_save_url' %}" method="post">
+        {% csrf_token %}
+        <img src="{{ url }}" alt="">
+
+        <a href="{% url 'hw24_index_url' %}">Home</a>
+        <div class="ml-1">
+            <textarea name="comment" id="1" cols="30" rows="10"></textarea>
+            <label for="1">Comment</label>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+
+
+{% endblock %}

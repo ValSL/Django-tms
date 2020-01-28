@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Send
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% url 'hw24_send_url' %}" method="post">
+        {% csrf_token %}
+        Send to email ?
+        <button type="submit" class="btn btn-success">Send</button>
+        <a href="{% url 'hw24_index_url' %}" class="btn btn-danger">No</a>
+    </form>
+
+
+
+{% endblock %}
