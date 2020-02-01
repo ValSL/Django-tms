@@ -6,6 +6,7 @@ from random import randint
 from .models import NatureImage
 from django.core.mail import send_mail
 
+
 def index(request):
     form = ImageForm()
     return render(request, 'hw24/index.html', context={'form': form})
@@ -43,5 +44,6 @@ class ImageSaveView(View):
 
 class SendView(View):
     def post(self, request):
-        send_mail('Image', request.session['data']['download_url'], 'ValSLTest@yandex.by', ['ValSLTest@yandex.by'], fail_silently=False)
+        send_mail('Image', request.session['data']['download_url'], 'ValSLTest@yandex.by', ['ValSLTest@yandex.by'],
+                  fail_silently=False)
         return redirect('hw24_index_url')

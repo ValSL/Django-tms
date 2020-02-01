@@ -3,11 +3,13 @@ from django.shortcuts import render, redirect, reverse
 import requests
 from django.views import View
 from .models import AnimalImage
-from .forms import Message
+from .forms import Message, FindForm
+from django.db.models import Q
 
 
 def index(request):
-    return render(request, 'cw24/cw24_index.html')
+    form = FindForm()
+    return render(request, 'cw24/cw24_index.html', context={'form': form})
 
 
 class Image(View):
@@ -63,3 +65,15 @@ class SendMessage(View):
                 fail_silently=False,
             )
         return redirect('index_url')
+
+
+def animal_urls(request):
+    form = FindForm(request.POST)
+    animals = []
+    if form.is_valid():
+        data = form.cleaned_data
+        if data['animal'] == '1':
+            animals = AnimalImage.objects.filter(species='Dog', type=data['image_type'])
+        elif data['animal'] == '2':
+            animals = AnimalImage.objects.filter(species='Cat', type=data['image_type'])
+        return render(request, 'cw24/animal_url_list.html', context={'animals': animals})

@@ -16,4 +16,9 @@
             <input class="btn btn-primary" type="submit" name="button" value="I love dogs!">
         </div>
     </form>
+    <form action="{% url 'animal_url' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 {% endblock %}
